@@ -1,6 +1,8 @@
 const express = require('express') // la récupération d'express
 const app = express() // variable utilisant la librairie express
 const question = require('./question.json')
+var cors = require('cors')
+app.use(cors())
 
 //MiddleWare
 app.use(express.json())
@@ -49,6 +51,6 @@ app.delete('/question/:id', (req,res) => {
 })
 
 
-app.listen(3000, () => { // ouverture du serveur sur le port 3000
+app.listen(8000, () => { // ouverture du serveur sur le port 3000
      console.log("Serveur à l'écoute") // afficher un message dans la console.
 })
